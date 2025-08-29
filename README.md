@@ -13,7 +13,7 @@ This SQL modeling project creates a comprehensive customer analytics framework d
 - **Key Fields**:
   - `customer_id`
   - `taxonomy_business_category_group`
-  - Unique on customer_id
+- Unique on customer_id
 
 
 #### 2. customers
@@ -21,8 +21,8 @@ This SQL modeling project creates a comprehensive customer analytics framework d
 - **Description**: Master customer table containing geographical information
 - **Key Fields**:
   - `customer_id`
-  - `country`
-  - Unique on customer_id
+  - `customer_country`
+- Unique on customer_id
 
 
 #### 3. activity
@@ -94,7 +94,7 @@ This SQL modeling project creates a comprehensive customer analytics framework d
 ```sql
 -- Monthly retention rate by customer category
 SELECT
-business_category,
+category_group,
 DATE_TRUNC(created_date, MONTH) AS cohort_month, 
 DATE_TRUNC(date, MONTH) AS month, 
 COUNT(DISTINCT customer_id) AS count_users_in_cohort, 
@@ -110,7 +110,7 @@ ORDER BY 1,2,3
 ```sql
 -- New customer acquisitions by  category
 SELECT
-business_category,
+category_group,
 DATE_TRUNC(created_date, MONTH) AS acquisition_month, 
 COUNT(DISTINCT customer_id) AS count_customers_acquired, 
 

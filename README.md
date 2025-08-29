@@ -1,4 +1,5 @@
-# Siddharth Ganeriwala submission for Manual AE Data Challenge
+#Submission for Manual AE Data Challenge
+### By Siddharth Ganeriwala
 
 ## Overview
 
@@ -69,27 +70,7 @@ This SQL modeling project creates a comprehensive customer analytics framework d
 - Track customer retention rates over time
 - Cohort-based retention studies
 - Segment retention by category and geography
-
-### 2. Acquisition Metrics
-- New customer acquisition tracking
-- Acquisition trends by category and country
-- Customer onboarding analysis
-
-### 3. Churn Analysis
-- Identify churn patterns and rates
-- Churn prediction modeling
-- Risk segmentation analysis
-
-## Implementation Benefits
-
-### Data Advantages
-- **Unified View**: Single source of truth for customer analytics
-- **Time-Series Ready**: Daily granularity enables trend analysis
-- **Dimension Rich**: Multiple segmentation options available
-- **Calculation Optimized**: Pre-structured for key metric calculations
-
-## Query Examples
-
+  
 ### Retention Rate Calculation
 ```sql
 -- Monthly retention rate by customer category
@@ -106,6 +87,11 @@ GROUP BY ALL
 ORDER BY 1,2,3
 ```
 
+### 2. Acquisition Metrics
+- New customer acquisition tracking
+- Acquisition trends by category and country
+- Customer onboarding analysis
+
 ### Acquisition Tracking
 ```sql
 -- New customer acquisitions by  category
@@ -114,11 +100,19 @@ category_group,
 DATE_TRUNC(created_date, MONTH) AS acquisition_month, 
 COUNT(DISTINCT customer_id) AS count_customers_acquired, 
 
-FROM bamboo-shift-470013-b1.manual.user_stats
+FROM user_stats
 
 GROUP BY ALL
 ORDER BY 1,2
 ```
+
+## Implementation Benefits
+
+### Data Advantages
+- **Unified View**: Single source of truth for customer analytics
+- **Time-Series Ready**: Daily granularity enables trend analysis
+- **Dimension Rich**: Multiple segmentation options available
+- **Calculation Optimized**: Pre-structured for key metric calculations
 
 ## Maintenance and Updates
 

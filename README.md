@@ -1,4 +1,4 @@
-#Submission for Manual AE Data Challenge
+# Submission for Manual AE Data Challenge
 ### By Siddharth Ganeriwala
 
 ## Overview
